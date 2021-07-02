@@ -1,0 +1,2 @@
+class UidParam < ApplicationRecord
+end

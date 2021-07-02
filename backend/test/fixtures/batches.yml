@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mfg: 2021-07-02 13:52:34
+  exp: 2021-07-02 13:52:34
+  product_id: 1
+
+two:
+  mfg: 2021-07-02 13:52:34
+  exp: 2021-07-02 13:52:34
+  product_id: 1

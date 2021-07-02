@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  location: MyString
+  batch_id: 1
+  represents: 1
+
+two:
+  status: MyString
+  location: MyString
+  batch_id: 1
+  represents: 1
