@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_07_02_195630) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "product_group"
+    t.integer "product_group_id"
     t.float "sales_price"
     t.float "purchase_price"
     t.datetime "created_at", precision: 6, null: false
@@ -76,7 +76,8 @@ ActiveRecord::Schema.define(version: 2021_07_02_195630) do
 
   create_table "uids", force: :cascade do |t|
     t.integer "item_id"
-    t.integer "uid_params"
+    t.integer "uid_param_id"
+    t.string "item_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
