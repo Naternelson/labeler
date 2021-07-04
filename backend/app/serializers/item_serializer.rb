@@ -1,6 +1,16 @@
 class ItemSerializer
   include JSONAPI::Serializer
-  attributes :status, :location, :represents
+  extend SerializerHelper
+
+  #Attributes
+  attributes :status, :location, :represents, :uids, :uid_params
+  attribute :batch, if: includes(:batch)
+
+  #Relationships
   belongs_to :batch 
-  has_many :uids, uid_params
+  has_many :uids
+  has_many :uid_params
+
+  #Key Transformation
+  set_key_transform :camel_lower
 end

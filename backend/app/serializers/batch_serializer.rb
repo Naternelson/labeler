@@ -1,6 +1,18 @@
 class BatchSerializer
   include JSONAPI::Serializer
-  attributes :mfg, :exp, :created_at
-  has_many :sub_components, items 
+  extend SerializerHelper
 
+  #Attributes
+  attributes :mfg, :exp, :created_at
+  attribute :sub_components, if: excludes(:sub_components), serializer: :batch
+  attribute :parent_components, if: includes(:parent_components), serializer: :batch
+  attribute :items, if: excludes(:items)
+
+  #Relationships
+  has_many :sub_components, serializer: :batch
+  has_many :parent_components, serializer: :batch
+  has_many :items
+  
+  #Key Transformation
+  set_key_transform :camel_lower
 end
