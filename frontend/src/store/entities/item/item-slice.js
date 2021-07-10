@@ -1,6 +1,6 @@
 // Imports
 import { createSlice } from "@reduxjs/toolkit";
-import { addEntity, addEntities, removeEntity, removeEntities } from "../../configuration/storeHelper";
+import { addEntity, addEntities, removeEntity, removeEntities } from "../../helpers/entitiesHelper";
 
 // Methods
 const slice = createSlice({
