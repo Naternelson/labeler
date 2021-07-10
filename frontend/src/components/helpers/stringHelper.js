@@ -10,12 +10,12 @@ class StringConverter {
     toUnderscore = () => this.string.replace(/(\s\w)/g, m => "_" + m.trim().toUpperCase())
     toSpaced = () => this.string 
 
-    fromUnderscored = () => {
+    fromUnderscore = () => {
         let string = this.string.replace(/(_)/g, () => " ")
         let string = string.toLowerCase()
         return new StringConverter(string)
     }
-    fromDashed = () => {
+    fromDash = () => {
         let string = this.string.replace(/(-)/g, () => " ")
         let string = string.toLowerCase()
         return new StringConverter(string)
