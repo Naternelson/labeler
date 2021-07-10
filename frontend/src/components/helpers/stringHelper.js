@@ -1,4 +1,5 @@
 const convert = string => new StringConverter(string)
+const express = obj => new StringNumber(obj)
 
 class StringConverter {
     constructor(string){
@@ -27,4 +28,29 @@ class StringConverter {
     }
 }
 
-export default convert
+
+class StringNumber{
+    constructor({number, zero, one, multiple}){
+        this.number = parseInt(number, 10) || 0
+        this.zeroSuffix = zero || multiple || ""
+        this.oneSuffix = one || multiple || ""
+        this.moreSuffix = multiple || ""
+    }
+    change = cb => {
+        this.number = cb(this.number)
+    } 
+    render = () => {
+        switch (this.number){
+            case 0:
+                const val =  this.number.toString() + " " +  this.zeroSuffix
+                return val.trim()
+            case 1:
+                const val =  this.number.toString() + " " +  this.oneSuffix
+                return val.trim()
+            default:
+                const val =  this.number.toString() + " " +  this.moreSuffix
+                return val.trim()
+        }
+    }
+}
+export {convert, express}
