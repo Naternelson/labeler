@@ -42,13 +42,13 @@ class StringNumber{
     render = () => {
         switch (this.number){
             case 0:
-                const val =  this.number.toString() + " " +  this.zeroSuffix
+                const val =  this.number.toString() + " " + this.zeroSuffix
                 return val.trim()
             case 1:
-                const val =  this.number.toString() + " " +  this.oneSuffix
+                const val =  this.number.toString() + " " + this.oneSuffix
                 return val.trim()
             default:
-                const val =  this.number.toString() + " " +  this.moreSuffix
+                const val =  this.number.toString() + " " + this.moreSuffix
                 return val.trim()
         }
     }
