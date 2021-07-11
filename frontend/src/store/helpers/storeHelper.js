@@ -13,6 +13,8 @@ export const orderChanger = () => {
         const indexSecondary = s.order.indexOf(beforeElement)
         indexSecondary === -1 ? s.order.push(el) : s.order.splice(indexSecondary, 0, el)
     }
-    
+}
 
+export const dispatcher = dispatchMethod => dispatchAction => {
+    dispatchMethod(dispatchAction)
 }

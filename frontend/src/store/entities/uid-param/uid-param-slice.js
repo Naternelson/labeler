@@ -5,7 +5,10 @@ import { addEntity, addEntities, removeEntity, removeEntities } from "../../help
 // Methods
 const slice = createSlice({
     name: "uidParam",
-    initialState: {},
+    initialState: {
+        1: {name: "Test Param"},
+        2: {name: "Another Param"}
+    },
     reducers: {
         uidParamAdded: addEntity(),
         uidParamsAdded: addEntities(),

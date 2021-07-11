@@ -1,8 +1,8 @@
 // Imports
-import logo from './logo.svg';
 import './App.css';
 import configureStore from './store/configuration/configureStore';
 import { Provider } from 'react-redux'
+import NewProductPage from './pages/product/new';
 
 // Declarations
 const store = configureStore()
@@ -11,22 +11,7 @@ const store = configureStore()
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <NewProductPage/>
     </Provider>
   );
 }

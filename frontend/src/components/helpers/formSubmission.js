@@ -1,4 +1,4 @@
 export const submitFormHelper = ({auto, cb}) => e => {
-    auto ? e.preventDefault() : null 
-    cb ? cb(e) : null
+    if(!auto) e.preventDefault()
+    if(cb) cb(e)
 }

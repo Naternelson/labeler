@@ -1,9 +1,10 @@
 import FormInput from './input'
+import './Form.css'
 import {submitFormHelper} from '../helpers/formSubmission'
 
 const FormCustom = props => {
-    let { id, style, onSubmit, auto } = props
-    onSubmit = submitFormHelper({auto, cb: onSumbit})
+    let { id, style, onSubmit, auto, children} = props
+    onSubmit = submitFormHelper({auto, cb: onSubmit})
 
     return <form id={id} onSubmit={onSubmit} className={style}>
         {children}

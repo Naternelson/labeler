@@ -1,4 +1,4 @@
-import { checkInputId } from "../helpers/formHelpers"
+import { checkInputId } from "../helpers/formChecks"
 
 const FormSelect = props => {
     let { 
@@ -6,21 +6,21 @@ const FormSelect = props => {
         id, name, style, error, 
         value, onChange, disabled,
         pattern, min, max, required,
-        minLength, maxLength } = props
+        minLength, maxLength, children } = props
     
     id = checkInputId(props)
     if(!id)return null 
 
     return <div className={`form-input ${style}`}>
-        <label for={id}>{label}</label>
+        <label htmlFor={id}>{label}</label>
         <select 
             type={type}     
             onChange={onChange} 
             value={value}
             name={name}
             pattern={pattern}
-            min={type=="number" ? min : null }
-            max={type=="number" ? max : null }
+            min={type==="number" ? min : null }
+            max={type==="number" ? max : null }
             minLength={minLength}
             maxLength={maxLength}
             required={!!required}

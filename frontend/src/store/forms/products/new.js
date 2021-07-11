@@ -13,8 +13,8 @@ const initialState = {
     data: {
         [name]: "",
         [description]: "",
-        [salesPrice]: null,
-        [purchasePrice]: null,
+        [salesPrice]: "",
+        [purchasePrice]: "",
         [uids]: []
     },
     order: [name, description, uids, purchasePrice, salesPrice]
@@ -28,7 +28,7 @@ const slice = createSlice({
         nameChanged: dataChanger(name),
         descriptionChanged: dataChanger(description),
         salesPriceChanged: dataChanger(salesPrice),
-        purchasePriceChanged: dataChanger(salesPrice),
+        purchasePriceChanged: dataChanger(purchasePrice),
         uidAdded: (store, action) => {
             store.data[uids].push(action.payload) 
         },
@@ -51,6 +51,7 @@ const slice = createSlice({
 
 // Exports
 export default slice.reducer
+export const formInputs = {name, description, salesPrice, purchasePrice, uids}
 export const {nameChanged,
     descriptionChanged,
     salesPriceChanged,
